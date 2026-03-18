@@ -329,6 +329,24 @@ body::after{
 #btnRew{font-size:16px;letter-spacing:-1px;opacity:.55}
 #btnRew:hover:not(:disabled){opacity:1}
 
+/* STOP button — large, obvious, red */
+.stop-btn{
+  width:46px;height:46px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(220,60,60,.15);
+  border:2px solid rgba(220,60,60,.4);
+  font-size:14px;color:rgba(220,60,60,.8);
+  cursor:pointer;
+  transition:all .15s;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  font-weight:900;letter-spacing:0;
+  user-select:none;
+}
+.stop-btn:hover{background:rgba(220,60,60,.9);color:#fff;border-color:rgba(220,60,60,1);box-shadow:0 0 14px rgba(220,60,60,.45)}
+.stop-btn:active{transform:scale(.88)}
+.stop-btn.silent{opacity:.2;pointer-events:none}
+
 .dots{
   display:flex;gap:4px;align-items:center;
   flex-wrap:wrap;justify-content:center;
@@ -586,7 +604,7 @@ body::after{
             </div>
             <div class="card-right">
               <span class="r-time"  id="fTime"></span>
-              <span class="r-verb"  id="fVerb" style="color:var(--mrs)"></span>
+              <span class="r-verb"  id="fVerb"></span>
               <span class="r-num"   id="fNum"></span>
             </div>
           </div>
@@ -602,7 +620,7 @@ body::after{
 
         <!-- BACK: Mr Bubbly -->
         <div class="face face-back" id="backFace">
-          <div class="ledge" style="background:var(--mr)"></div>
+          <div class="ledge" id="ledgeB"></div>
           <div class="card-top">
             <div class="char-id">
               <span class="char-em">🌧️</span>
@@ -610,7 +628,7 @@ body::after{
             </div>
             <div class="card-right">
               <span class="r-time" id="bTime"></span>
-              <span class="r-verb" id="bVerb" style="color:var(--mr)"></span>
+              <span class="r-verb" id="bVerb"></span>
               <span class="r-num"  id="bNum"></span>
             </div>
           </div>
@@ -632,10 +650,11 @@ body::after{
   <!-- FOOTER -->
   <footer class="ftr">
     <button class="nav-btn" id="btnRew" onclick="rewind()" title="Back to start">«</button>
-    <button class="nav-btn" id="btnP" onclick="prev()" disabled>‹</button>
-    <span   class="ctr"    id="ctr">1 / 60</span>
+    <button class="nav-btn" id="btnP"   onclick="prev()" disabled>‹</button>
+    <button class="stop-btn" id="btnStop" onclick="hardStop()" title="Stop speaking">■</button>
+    <span   class="ctr"     id="ctr">1 / 60</span>
     <div class="dots" id="dotsRow"></div>
-    <button class="nav-btn" id="btnN" onclick="next()">›</button>
+    <button class="nav-btn" id="btnN"   onclick="next()">›</button>
   </footer>
 
 </div><!-- /shell -->
@@ -713,22 +732,24 @@ function speakText(text,btnId,sentId){
     isSpeaking=false;
     currentSide=null;
     document.querySelectorAll('.vw').forEach(el=>el.classList.remove('bounce'));
+    updateStopBtn();
     if(watchMode)watchAfterSpeech();
   };
   speechSynthesis.speak(u);
+  updateStopBtn();
 }
 
 let currentSide=null; // tracks which side is currently speaking
 
 function speak(side){
   const v=V[cur];if(!v)return;
-  /* If already speaking THIS side → stop (toggle off) */
-  if(isSpeaking && currentSide===side){stopSpeech();return}
-  /* Otherwise stop whatever is playing and start this side */
+  if(isSpeaking && currentSide===side){stopSpeech();updateStopBtn();return}
+  watchStopped=false;
   stopSpeech();
   currentSide=side;
   if(side==='front') speakText(v.tenses[tense].mrs,'fSpk','fSent');
   else               speakText(v.tenses[tense].mr, 'bSpk','bSent');
+  updateStopBtn();
 }
 
 /* ═══════════════════════════════════════════
@@ -933,27 +954,33 @@ function render(){
   const tot=V.length;
   const num=(cur+1)+' / '+tot;
   const lbl=LABELS[tense];
+  const col=v.color||'var(--mrs)';   // per-verb colour from JSON
 
-  // Front
-  document.getElementById('ledgeF').style.background='var(--mrs)';
+  // Front — verb colour on ledge, verb badge, and highlighted words
+  document.getElementById('ledgeF').style.background=col;
   document.getElementById('fTime').textContent=v.time||'';
-  document.getElementById('fVerb').textContent=v.verb.toUpperCase();
+  const fv=document.getElementById('fVerb');
+  fv.textContent=v.verb.toUpperCase();
+  fv.style.color=col;
   document.getElementById('fNum').textContent=num;
   document.getElementById('fPill').textContent=lbl;
   document.getElementById('fScene').textContent=v.scene||'';
   document.getElementById('fSpk').classList.remove('live');
   document.getElementById('fSpk').textContent='🔊';
-  document.getElementById('fSent').innerHTML=markVerb(d.mrs,'var(--mrs)');
+  document.getElementById('fSent').innerHTML=markVerb(d.mrs,col);
 
-  // Back
+  // Back — same verb colour (the verb owns the colour; character is shown by character name)
+  document.getElementById('ledgeB').style.background=col;
   document.getElementById('bTime').textContent=v.time||'';
-  document.getElementById('bVerb').textContent=v.verb.toUpperCase();
+  const bv=document.getElementById('bVerb');
+  bv.textContent=v.verb.toUpperCase();
+  bv.style.color=col;
   document.getElementById('bNum').textContent=num;
   document.getElementById('bPill').textContent=lbl;
   document.getElementById('bScene').textContent=v.scene||'';
   document.getElementById('bSpk').classList.remove('live');
   document.getElementById('bSpk').textContent='🔊';
-  document.getElementById('bSent').innerHTML=markVerb(d.mr,'var(--mr)');
+  document.getElementById('bSent').innerHTML=markVerb(d.mr,col);
 
   // dots + nav
   renderDots();
@@ -961,6 +988,7 @@ function render(){
   document.getElementById('btnRew').disabled=cur<=0;
   document.getElementById('btnP').disabled=cur<=0;
   document.getElementById('btnN').disabled=cur>=V.length-1;
+  updateStopBtn();
 }
 
 function renderDots(){
@@ -977,12 +1005,47 @@ function renderDots(){
 /* ═══════════════════════════════════════════
    NAVIGATION
 ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   HARD STOP — one button kills everything
+═══════════════════════════════════════════ */
+function hardStop(){
+  watchStopped=true;
+  watchMode=false;
+  clearWT();
+  speechSynthesis.cancel();
+  isSpeaking=false;
+  currentSide=null;
+  // Reset all visual state
+  ['fSpk','bSpk'].forEach(id=>{
+    const b=document.getElementById(id);
+    if(b){b.classList.remove('live');b.textContent='🔊'}
+  });
+  document.querySelectorAll('.vw').forEach(el=>el.classList.remove('bounce'));
+  // Reset mode toggle UI
+  document.getElementById('modeBtn').classList.remove('on');
+  document.getElementById('modeLbl').textContent='READ';
+  document.getElementById('modeLbl').classList.remove('watch-on');
+  document.getElementById('pStrip').classList.remove('on');
+  document.getElementById('hint').style.display='';
+  // Dim stop button since nothing is playing
+  document.getElementById('btnStop').classList.add('silent');
+}
+
+function updateStopBtn(){
+  const btn=document.getElementById('btnStop');
+  if(!btn)return;
+  const active=isSpeaking||watchMode||watchTimer;
+  btn.classList.toggle('silent',!active);
+}
+
 function goTo(i){
   if(i<0||i>=V.length)return;
+  watchStopped=true;
   stopSpeech();clearWT();
   unflip();cur=i;
   enterAnim();render();
-  if(watchMode)watchStart();
+  if(watchMode) setTimeout(()=>{ watchStopped=false; watchStart(); }, 120);
+  updateStopBtn();
 }
 function rewind(){
   watchStopped=true;
@@ -990,6 +1053,7 @@ function rewind(){
   unflip();cur=0;
   enterAnim();render();
   if(watchMode) setTimeout(()=>{ watchStopped=false; watchStart(); }, 120);
+  updateStopBtn();
 }
 function next(){if(cur<V.length-1)goTo(cur+1);else if(watchMode)showComplete()}
 function prev(){if(cur>0)goTo(cur-1)}
@@ -1045,8 +1109,13 @@ function toggleWatch(){
   lbl.classList.toggle('watch-on',watchMode);
   ps.classList.toggle('on',watchMode);
   ht.style.display=watchMode?'none':'';
+  watchStopped=true;
   stopSpeech();clearWT();
-  if(watchMode){unflip();watchStart()}
+  if(watchMode){
+    unflip();
+    setTimeout(()=>{ watchStopped=false; watchStart(); }, 120);
+  }
+  updateStopBtn();
 }
 
 /* Watch flow: speak Mrs → pause 1.8s → flip → speak Mr → pause 2.2s → advance */
@@ -1065,23 +1134,25 @@ function watchAfterSpeech(){
   if(!flipped){
     // Mrs just finished — pause then flip to Mr
     watchTimer=setTimeout(()=>{
-      if(!watchMode)return;
+      if(!watchMode||watchStopped)return;
       flipped=true;
       document.getElementById('flipCard').classList.add('flipped');
       watchTimer=setTimeout(()=>{
-        if(!watchMode)return;
+        if(!watchMode||watchStopped)return;
         const v=V[cur];if(!v)return;
         currentSide='back';
         speakText(v.tenses[tense].mr,'bSpk','bSent');
+        updateStopBtn();
       },550);
     },1800);
   } else {
     // Mr just finished — pause then advance
     watchTimer=setTimeout(()=>{
-      if(!watchMode)return;
+      if(!watchMode||watchStopped)return;
       if(cur<V.length-1){next()}else showComplete();
     },2200);
   }
+  updateStopBtn();
 }
 
 function clearWT(){if(watchTimer){clearTimeout(watchTimer);watchTimer=null}}
