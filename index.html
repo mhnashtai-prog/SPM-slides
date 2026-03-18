@@ -326,6 +326,8 @@ body::after{
 }
 .nav-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);box-shadow:0 0 10px var(--gold-glow)}
 .nav-btn:disabled{opacity:.16;cursor:default}
+#btnRew{font-size:16px;letter-spacing:-1px;opacity:.55}
+#btnRew:hover:not(:disabled){opacity:1}
 
 .dots{
   display:flex;gap:4px;align-items:center;
@@ -391,6 +393,96 @@ body::after{
 /* ═══════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   LEVEL SELECTOR
+═══════════════════════════════════════════ */
+.level-screen{
+  position:fixed;inset:0;z-index:900;
+  background:var(--bg);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:0;
+  padding:24px 16px;
+}
+.level-screen.hidden{display:none}
+
+.ls-logo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:15px;letter-spacing:6px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
+}
+.ls-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:clamp(28px,5vw,46px);letter-spacing:-0.5px;
+  color:var(--ink);margin-bottom:6px;text-align:center;
+}
+.ls-sub{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:40px;text-align:center;
+}
+.ls-cards{
+  display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
+  width:100%;max-width:860px;
+}
+.ls-card{
+  flex:1;min-width:220px;max-width:260px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:0;cursor:pointer;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 8px 32px rgba(0,0,0,.45);
+}
+.ls-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(0,0,0,.6);
+}
+.ls-card-band{height:4px;flex-shrink:0}
+.ls-card-body{padding:28px 24px 24px;flex:1;display:flex;flex-direction:column;gap:10px}
+.ls-level{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:42px;letter-spacing:-1px;line-height:1;
+}
+.ls-name{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.ls-desc{
+  font-family:'Instrument Sans',sans-serif;font-size:13px;
+  color:var(--ink-2);line-height:1.55;flex:1;
+  margin-top:4px;
+}
+.ls-count{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--ink-3);margin-top:8px;
+  border-top:1px solid var(--border-dim);padding-top:12px;
+}
+.ls-card:hover .ls-level{opacity:.85}
+
+/* ── level badge in header ── */
+.level-badge{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  padding:4px 10px;border-radius:4px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  cursor:pointer;color:var(--ink-2);
+  transition:border-color .15s,color .15s;
+  white-space:nowrap;flex-shrink:0;
+  margin-left:4px;
+}
+.level-badge:hover{border-color:var(--gold);color:var(--gold)}
+
+@media(max-width:580px){
+  .ls-cards{flex-direction:column;align-items:center}
+  .ls-card{min-width:280px;max-width:340px}
+}
+
 @media(max-width:600px){
   .logo-pipe,.logo-tag{display:none}
   .t-btn{padding:0 13px;font-size:9px;letter-spacing:1px}
@@ -405,7 +497,50 @@ body::after{
 </style>
 </head>
 <body>
-<div class="shell">
+
+<!-- ══════════════════════════════
+     LEVEL SELECTOR SCREEN
+══════════════════════════════ -->
+<div class="level-screen" id="levelScreen">
+  <div class="ls-logo">INTUITY</div>
+  <div class="ls-title">A Day with the Bubblys</div>
+  <div class="ls-sub">Choose your level</div>
+  <div class="ls-cards">
+
+    <div class="ls-card" onclick="chooseLevel('A1')">
+      <div class="ls-card-band" style="background:#7ec8a0"></div>
+      <div class="ls-card-body">
+        <div class="ls-level" style="color:#7ec8a0">A1</div>
+        <div class="ls-name">Elementary</div>
+        <div class="ls-desc">The simplest everyday actions. Short, clear sentences with the most common verbs.</div>
+        <div class="ls-count">60 verbs · verbs-a1.json</div>
+      </div>
+    </div>
+
+    <div class="ls-card" onclick="chooseLevel('A2')">
+      <div class="ls-card-band" style="background:#6ab0d8"></div>
+      <div class="ls-card-body">
+        <div class="ls-level" style="color:#6ab0d8">A2</div>
+        <div class="ls-name">Pre-Intermediate</div>
+        <div class="ls-desc">Familiar situations with slightly longer sentences and a wider range of daily verbs.</div>
+        <div class="ls-count">60 verbs · verbs-a2.json</div>
+      </div>
+    </div>
+
+    <div class="ls-card" onclick="chooseLevel('B1')">
+      <div class="ls-card-band" style="background:var(--gold)"></div>
+      <div class="ls-card-body">
+        <div class="ls-level" style="color:var(--gold)">B1</div>
+        <div class="ls-name">Intermediate</div>
+        <div class="ls-desc">Natural, collocation-rich sentences. Phrasal verbs, richer context, full daily narrative.</div>
+        <div class="ls-count">60 verbs · verbs-data.json</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="shell" id="appShell" style="display:none">
 
   <!-- HEADER -->
   <header class="hdr">
@@ -413,6 +548,7 @@ body::after{
       <span class="logo-word">INTUITY</span>
       <div class="logo-pipe"></div>
       <span class="logo-tag">Verb Slides</span>
+      <button class="level-badge" id="levelBadge" onclick="goToSelector()">B1</button>
     </div>
 
     <nav class="tense-row">
@@ -495,6 +631,7 @@ body::after{
 
   <!-- FOOTER -->
   <footer class="ftr">
+    <button class="nav-btn" id="btnRew" onclick="rewind()" title="Back to start">«</button>
     <button class="nav-btn" id="btnP" onclick="prev()" disabled>‹</button>
     <span   class="ctr"    id="ctr">1 / 60</span>
     <div class="dots" id="dotsRow"></div>
@@ -545,7 +682,10 @@ function loadVoice(){
 }
 speechSynthesis.onvoiceschanged=loadVoice;loadVoice();
 
+let watchStopped=false;
+
 function stopSpeech(){
+  watchStopped=true;            // must set BEFORE cancel() so onend sees it
   speechSynthesis.cancel();
   isSpeaking=false;
   currentSide=null;
@@ -559,6 +699,7 @@ function stopSpeech(){
 function speakText(text,btnId,sentId){
   stopSpeech();
   if(!text)return;
+  watchStopped=false;           // clear: this is a fresh, intentional utterance
   document.querySelectorAll('#'+sentId+' .vw').forEach(el=>el.classList.add('bounce'));
   const btn=document.getElementById(btnId);
   btn.classList.add('live');btn.textContent='⏸';
@@ -567,6 +708,7 @@ function speakText(text,btnId,sentId){
   u.rate=0.72;u.pitch=1.06;u.volume=1;
   if(ukVoice)u.voice=ukVoice;
   u.onend=u.onerror=()=>{
+    if(watchStopped)return;     // cancelled — do NOT continue watch cycle
     btn.classList.remove('live');btn.textContent='🔊';
     isSpeaking=false;
     currentSide=null;
@@ -590,142 +732,198 @@ function speak(side){
 }
 
 /* ═══════════════════════════════════════════
-   RENDER
+   VERB HIGHLIGHTING
+   Scan the whole sentence for ANY known English verb form.
+   Longest forms matched first to catch phrasal verbs before bare verbs.
 ═══════════════════════════════════════════ */
-function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function reEsc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+const VERB_FORMS=(()=>{
+  const raw=[
+    'wake up','wakes up','woke up','woken up','waking up',
+    'get up','gets up','got up','getting up',
+    'get dressed','gets dressed','got dressed','getting dressed',
+    'get on with','gets on with','got on with','getting on with',
+    'have a shower','has a shower','had a shower','having a shower',
+    'have lunch','has lunch','had lunch','having lunch',
+    'have a shave','has a shave','had a shave',
+    'have a nap','has a nap','had a nap',
+    'have a bath','has a bath','had a bath',
+    'have breakfast','has breakfast','had breakfast',
+    'fall asleep','falls asleep','fell asleep','fallen asleep','falling asleep',
+    'sort out','sorts out','sorted out','sorting out',
+    'tidy up','tidies up','tidied up','tidying up',
+    'pick up','picks up','picked up','picking up',
+    'drop off','drops off','dropped off','dropping off',
+    'drop in','drops in','dropped in','dropping in',
+    'clear up','clears up','cleared up','clearing up',
+    'catch up','catches up','caught up','catching up',
+    'lock up','locks up','locked up','locking up',
+    'put away','puts away','put away','putting away',
+    'turn off','turns off','turned off','turning off',
+    'turn on','turns on','turned on','turning on',
+    'carry on','carries on','carried on','carrying on',
+    'run errands','runs errands','ran errands','running errands',
+    'run out','runs out','ran out','running out',
+    'look after','looks after','looked after','looking after',
+    'look forward','looks forward','looked forward','looking forward',
+    'look back','looks back','looked back','looking back',
+    'look for','looks for','looked for','looking for',
+    'deal with','deals with','dealt with','dealing with',
+    'take care of','takes care of','took care of','taking care of',
+    'come up with','comes up with','came up with','coming up with',
+    'put up with','puts up with','putting up with',
+    'set an alarm','sets an alarm','set an alarm','setting an alarm',
+    'give up','gives up','gave up','given up','giving up',
+    'give away','gives away','gave away','given away','giving away',
+    'put on','puts on','put on','putting on',
+    'take off','takes off','took off','taken off','taking off',
+    'go back','goes back','went back','going back',
+    'come back','comes back','came back','coming back',
+    'go out','goes out','went out','going out',
+    'set off','sets off','set off','setting off',
+    'check on','checks on','checked on','checking on',
+    'sit down','sits down','sat down','sitting down',
+    'stand up','stands up','stood up','standing up',
+    // single-word forms — bare verb
+    'wake','wakes','woke','woken','waking',
+    'get','gets','got','gotten','getting',
+    'have','has','had','having',
+    'make','makes','made','making',
+    'eat','eats','ate','eaten','eating',
+    'skip','skips','skipped','skipping',
+    'raid','raids','raided','raiding',
+    'check','checks','checked','checking',
+    'walk','walks','walked','walking',
+    'catch','catches','caught','catching',
+    'run','runs','ran','running',
+    'meet','meets','met','meeting',
+    'grab','grabs','grabbed','grabbing',
+    'drop','drops','dropped','dropping',
+    'sort','sorts','sorted','sorting',
+    'tidy','tidies','tidied','tidying',
+    'cook','cooks','cooked','cooking',
+    'look','looks','looked','looking',
+    'pick','picks','picked','picking',
+    'sit','sits','sat','sitting',
+    'water','waters','watered','watering',
+    'fix','fixes','fixed','fixing',
+    'bring','brings','brought','bringing',
+    'listen','listens','listened','listening',
+    'prepare','prepares','prepared','preparing',
+    'set','sets','setting',
+    'arrive','arrives','arrived','arriving',
+    'pour','pours','poured','pouring',
+    'tell','tells','told','telling',
+    'laugh','laughs','laughed','laughing',
+    'send','sends','sent','sending',
+    'fill','fills','filled','filling',
+    'read','reads','reading',
+    'think','thinks','thought','thinking',
+    'fall','falls','fell','fallen','falling',
+    'sleep','sleeps','slept','sleeping',
+    'dream','dreams','dreamed','dreamt','dreaming',
+    'share','shares','shared','sharing',
+    'keep','keeps','kept','keeping',
+    'give','gives','gave','given','giving',
+    'remember','remembers','remembered','remembering',
+    'forget','forgets','forgot','forgotten','forgetting',
+    'love','loves','loved','loving',
+    'live','lives','lived','living',
+    'carry','carries','carried','carrying',
+    'come','comes','came','coming',
+    'turn','turns','turned','turning',
+    'watch','watches','watched','watching',
+    'call','calls','called','calling',
+    'find','finds','found','finding',
+    'take','takes','took','taken','taking',
+    'buy','buys','bought','buying',
+    'ask','asks','asked','asking',
+    'help','helps','helped','helping',
+    'play','plays','played','playing',
+    'start','starts','started','starting',
+    'put','puts','putting',
+    'leave','leaves','left','leaving',
+    'say','says','said','saying',
+    'speak','speaks','spoke','spoken','speaking',
+    'write','writes','wrote','written','writing',
+    'hear','hears','heard','hearing',
+    'stand','stands','stood','standing',
+    'try','tries','tried','trying',
+    'show','shows','showed','shown','showing',
+    'work','works','worked','working',
+    'feel','feels','felt','feeling',
+    'miss','misses','missed','missing',
+    'smile','smiles','smiled','smiling',
+    'wait','waits','waited','waiting',
+    'change','changes','changed','changing',
+    'spend','spends','spent','spending',
+    'join','joins','joined','joining',
+    'borrow','borrows','borrowed','borrowing',
+    'know','knows','knew','known','knowing',
+    'go','goes','went','gone','going',
+    'see','sees','saw','seen','seeing',
+    'drink','drinks','drank','drunk','drinking',
+    'drive','drives','drove','driven','driving',
+    'feed','feeds','fed','feeding',
+    'open','opens','opened','opening',
+    'close','closes','closed','closing',
+    'move','moves','moved','moving',
+    'stop','stops','stopped','stopping',
+    'finish','finishes','finished','finishing',
+    'like','likes','liked','liking',
+    'lose','loses','lost','losing',
+    'manage','manages','managed','managing',
+    'post','posts','posted','posting',
+    'reply','replies','replied','replying',
+    'chat','chats','chatted','chatting',
+    'invite','invites','invited','inviting',
+    'accept','accepts','accepted','accepting',
+    'follow','follows','followed','following',
+    'notice','notices','noticed','noticing',
+    'decide','decides','decided','deciding',
+    'enjoy','enjoys','enjoyed','enjoying',
+    'learn','learns','learned','learnt','learning',
+    'count','counts','counted','counting',
+    'offer','offers','offered','offering',
+    'park','parks','parked','parking',
+    'blame','blames','blamed','blaming',
+    'hold','holds','held','holding',
+    'hit','hits','hitting',
+    'plan','plans','planned','planning',
+    'bake','bakes','baked','baking',
+    'serve','serves','served','serving',
+    'taste','tastes','tasted','tasting',
+    'wash','washes','washed','washing',
+    'dry','dries','dried','drying',
+    'iron','irons','ironed','ironing',
+    'fold','folds','folded','folding',
+    'pack','packs','packed','packing',
+    'collect','collects','collected','collecting',
+    'deliver','delivers','delivered','delivering',
+    'receive','receives','received','receiving',
+    'type','types','typed','typing',
+    'scroll','scrolls','scrolled','scrolling',
+    'print','prints','printed','printing',
+    'save','saves','saved','saving',
+    'roll','rolls','rolled','rolling',
+    'pull','pulls','pulled','pulling',
+    'push','pushes','pushed','pushing',
+    'press','presses','pressed','pressing',
+    'sign','signs','signed','signing',
+    'burn','burns','burned','burnt','burning',
+    'boil','boils','boiled','boiling',
+    'fry','fries','fried','frying',
+  ];
+  // deduplicate and sort longest first
+  return [...new Set(raw)].sort((a,b)=>b.length-a.length);
+})();
 
-/* ── Irregular verb map (base → [past, past participle]) ── */
-const IRREG={
-  wake:['woke','woken'],
-  get:['got','got','gotten'],
-  have:['had','had'],
-  make:['made','made'],
-  eat:['ate','eaten'],
-  check:['checked','checked'],
-  walk:['walked','walked'],
-  catch:['caught','caught'],
-  run:['ran','run'],
-  meet:['met','met'],
-  grab:['grabbed','grabbed'],
-  drop:['dropped','dropped'],
-  sort:['sorted','sorted'],
-  tidy:['tidied','tidied'],
-  cook:['cooked','cooked'],
-  deal:['dealt','dealt'],
-  look:['looked','looked'],
-  pick:['picked','picked'],
-  sit:['sat','sat'],
-  water:['watered','watered'],
-  fix:['fixed','fixed'],
-  bring:['brought','brought'],
-  listen:['listened','listened'],
-  prepare:['prepared','prepared'],
-  set:['set','set'],
-  arrive:['arrived','arrived'],
-  pour:['poured','poured'],
-  tell:['told','told'],
-  laugh:['laughed','laughed'],
-  send:['sent','sent'],
-  fill:['filled','filled'],
-  read:['read','read'],
-  think:['thought','thought'],
-  fall:['fell','fallen'],
-  sleep:['slept','slept'],
-  dream:['dreamed','dreamed','dreamt'],
-  share:['shared','shared'],
-  keep:['kept','kept'],
-  give:['gave','given'],
-  remember:['remembered','remembered'],
-  forget:['forgot','forgotten'],
-  love:['loved','loved'],
-  live:['lived','lived'],
-  carry:['carried','carried'],
-  come:['came','come'],
-  turn:['turned','turned']
-};
-
-function inflections(verb){
-  /* Returns every form we want to highlight for this verb */
-  const v=verb.toLowerCase().trim();
-  const forms=new Set();
-
-  /* If multi-word (e.g. "get up", "sort out"), collect all words */
-  const words=v.split(/\s+/);
-  const base=words[0];
-  const particle=words.slice(1).join(' '); // "up", "out", "after", etc.
-
-  function addForms(b){
-    forms.add(b);
-    // regular inflections
-    if(b.endsWith('e')){
-      forms.add(b+'s');forms.add(b+'d');forms.add(b.slice(0,-1)+'ing');
-    } else if(b.endsWith('y')&&!/[aeiou]y$/.test(b)){
-      forms.add(b.slice(0,-1)+'ies');forms.add(b.slice(0,-1)+'ied');forms.add(b+'ing');
-    } else {
-      forms.add(b+'s');forms.add(b+'ed');forms.add(b+'ing');
-      // double consonant
-      const m=b.match(/[aeiou]([bcdfghjklmnpqrstvwxyz])$/);
-      if(m){forms.add(b+m[1]+'ed');forms.add(b+m[1]+'ing')}
-    }
-    // irregular
-    const irr=IRREG[b];
-    if(irr)irr.forEach(f=>forms.add(f));
-  }
-
-  addForms(base);
-
-  /* Build final array: include particle where needed */
-  const result=[];
-  forms.forEach(f=>{
-    if(particle){
-      /* multi-word: match "gets up", "got up", "getting up", "sort out", etc. */
-      result.push(f+'\\s+'+reEsc(particle));
-    } else {
-      result.push(reEsc(f));
-    }
-  });
-
-  /* Also add "will + base[+particle]" and "has/have/had + pp[+particle]" */
-  const pp=(IRREG[base]&&IRREG[base][1])||base+'ed';
-  if(particle){
-    result.push('will\\s+'+reEsc(base)+'\\s+'+reEsc(particle));
-    result.push('(?:has|have|had)\\s+'+reEsc(pp)+'\\s+'+reEsc(particle));
-    result.push('never\\s+'+reEsc(base)+'\\s+'+reEsc(particle));
-    result.push('never\\s+'+reEsc(pp)+'\\s+'+reEsc(particle));
-    result.push('always\\s+'+reEsc(base)+'\\s+'+reEsc(particle));
-  } else {
-    result.push('will\\s+'+reEsc(base));
-    result.push('(?:has|have|had)\\s+'+reEsc(pp));
-    result.push('never\\s+'+reEsc(base));
-    result.push('never\\s+'+reEsc(pp));
-    result.push('always\\s+'+reEsc(base));
-  }
-
-  /* sort longest first so greedy match picks multi-word before single */
-  result.sort((a,b)=>b.length-a.length);
-  return result;
+function markVerb(sentence,col){
+  // Build a single alternation regex from all forms (longest first)
+  const escaped=VERB_FORMS.map(f=>f.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+  const rx=new RegExp('(?<![\\w])('+escaped.join('|')+')(?![\\w])', 'gi');
+  return esc(sentence).replace(rx,`<span class="vw" style="color:${col}">$1</span>`);
 }
 
-function markVerb(sentence,verb,col){
-  let s=esc(sentence);
-  const pats=inflections(verb);
-  /* join into one alternation */
-  const combined='(?<![\\w])('+pats.join('|')+')(?![\\w-])';
-  try{
-    const rx=new RegExp(combined,'gi');
-    s=s.replace(rx,`<span class="vw" style="color:${col}">$1</span>`);
-  }catch(e){
-    /* fallback: try each pattern individually */
-    for(const p of pats){
-      try{
-        const rx=new RegExp('(?<![\\w])('+p+')(?![\\w-])','gi');
-        s=s.replace(rx,`<span class="vw" style="color:${col}">$1</span>`);
-      }catch(_){}
-    }
-  }
-  return s;
-}
 
 function render(){
   const v=V[cur];if(!v)return;
@@ -743,7 +941,7 @@ function render(){
   document.getElementById('fScene').textContent=v.scene||'';
   document.getElementById('fSpk').classList.remove('live');
   document.getElementById('fSpk').textContent='🔊';
-  document.getElementById('fSent').innerHTML=markVerb(d.mrs,v.verb,'var(--mrs)');
+  document.getElementById('fSent').innerHTML=markVerb(d.mrs,'var(--mrs)');
 
   // Back
   document.getElementById('bTime').textContent=v.time||'';
@@ -753,11 +951,12 @@ function render(){
   document.getElementById('bScene').textContent=v.scene||'';
   document.getElementById('bSpk').classList.remove('live');
   document.getElementById('bSpk').textContent='🔊';
-  document.getElementById('bSent').innerHTML=markVerb(d.mr,v.verb,'var(--mr)');
+  document.getElementById('bSent').innerHTML=markVerb(d.mr,'var(--mr)');
 
   // dots + nav
   renderDots();
   document.getElementById('ctr').textContent=num;
+  document.getElementById('btnRew').disabled=cur<=0;
   document.getElementById('btnP').disabled=cur<=0;
   document.getElementById('btnN').disabled=cur>=V.length-1;
 }
@@ -782,6 +981,13 @@ function goTo(i){
   unflip();cur=i;
   enterAnim();render();
   if(watchMode)watchStart();
+}
+function rewind(){
+  watchStopped=true;
+  stopSpeech();clearWT();
+  unflip();cur=0;
+  enterAnim();render();
+  if(watchMode) setTimeout(()=>{ watchStopped=false; watchStart(); }, 120);
 }
 function next(){if(cur<V.length-1)goTo(cur+1);else if(watchMode)showComplete()}
 function prev(){if(cur>0)goTo(cur-1)}
@@ -812,10 +1018,15 @@ function handleFlip(){
    TENSE
 ═══════════════════════════════════════════ */
 function setTense(t){
-  tense=t;stopSpeech();clearWT();
+  tense=t;
+  watchStopped=true;    // block any in-flight onend from the old utterance
+  stopSpeech();
+  clearWT();
+  unflip();
   document.querySelectorAll('.t-btn').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
   render();
-  if(watchMode)watchStart();
+  // Small delay so any browser onend callbacks from the cancelled utterance fire first
+  if(watchMode) setTimeout(()=>{ watchStopped=false; watchStart(); }, 120);
 }
 
 /* ═══════════════════════════════════════════
@@ -913,15 +1124,66 @@ document.addEventListener('touchend',e=>{
 });
 
 /* ═══════════════════════════════════════════
-   INIT
+   LEVEL SELECTOR
 ═══════════════════════════════════════════ */
-async function init(){
+const LEVEL_FILES={
+  A1:'./verbs-a1.json',
+  A2:'./verbs-a2.json',
+  B1:'./verbs-data.json'
+};
+const LEVEL_COLORS={
+  A1:'#7ec8a0',
+  A2:'#6ab0d8',
+  B1:'#C9A961'
+};
+
+let currentLevel='B1';
+
+function chooseLevel(lvl){
+  currentLevel=lvl;
+  // Update badge text and colour
+  const badge=document.getElementById('levelBadge');
+  badge.textContent=lvl;
+  badge.style.color=LEVEL_COLORS[lvl];
+  badge.style.borderColor=LEVEL_COLORS[lvl]+'55';
+  // Hide selector, show app
+  document.getElementById('levelScreen').classList.add('hidden');
+  document.getElementById('appShell').style.display='flex';
+  // Reset state
+  watchStopped=true;
+  stopSpeech();clearWT();
+  cur=0;tense='present';flipped=false;
+  document.querySelectorAll('.t-btn').forEach(b=>b.classList.toggle('on',b.dataset.t==='present'));
+  // Load JSON for chosen level
+  loadLevel(LEVEL_FILES[lvl]);
+}
+
+function goToSelector(){
+  watchStopped=true;
+  stopSpeech();clearWT();
+  // Hide app, show selector
+  document.getElementById('appShell').style.display='none';
+  document.getElementById('levelScreen').classList.remove('hidden');
+}
+
+async function loadLevel(file){
   try{
-    const r=await fetch('./verbs-data.json');
+    const r=await fetch(file);
     const d=await r.json();
     V=d.verbs;
-  }catch(e){V=[]}
-  render();
+  }catch(e){
+    V=[];
+    console.warn('Could not load',file);
+  }
+  cur=0;unflip();render();
+}
+
+/* ═══════════════════════════════════════════
+   INIT — show selector, not app
+═══════════════════════════════════════════ */
+async function init(){
+  // Do nothing on load — wait for level choice
+  // (legacy: if you want auto-load B1, call chooseLevel('B1') here)
 }
 init();
 </script>
