@@ -1,0 +1,545 @@
+{
+  "meta": { "title": "A Day with the Bubblys", "level": "A2", "total": 60 },
+  "verbs": [
+    {
+      "id": 1, "verb": "wake up", "emoji": "🌅", "time": "6:00 am", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly wakes up at six and gets out of bed straight away.", "mr": "Mr Bubbly wakes up at six but goes back to sleep immediately." },
+        "past":    { "mrs": "Mrs Bubbly woke up early and felt ready for the day.", "mr": "Mr Bubbly woke up late and missed breakfast." },
+        "future":  { "mrs": "Mrs Bubbly will wake up early and go for a walk.", "mr": "Mr Bubbly will wake up late because he stayed up too long." },
+        "perfect": { "mrs": "Mrs Bubbly has woken up at the same time every day this week.", "mr": "Mr Bubbly has woken up at a different time every day this week." }
+      }
+    },
+    {
+      "id": 2, "verb": "get up", "emoji": "🛏️", "time": "6:05 am", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly gets up and opens the curtains to let in the light.", "mr": "Mr Bubbly gets up and immediately walks to the kitchen for biscuits." },
+        "past":    { "mrs": "Mrs Bubbly got up, made the bed and went downstairs.", "mr": "Mr Bubbly got up slowly and tripped over his own shoes." },
+        "future":  { "mrs": "Mrs Bubbly will get up early to make breakfast for everyone.", "mr": "Mr Bubbly will get up when he smells the coffee." },
+        "perfect": { "mrs": "Mrs Bubbly has got up and is already in the garden.", "mr": "Mr Bubbly has got up but cannot find his slippers." }
+      }
+    },
+    {
+      "id": 3, "verb": "have a shower", "emoji": "🚿", "time": "6:15 am", "scene": "The bathroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly has a shower and gets dressed in ten minutes.", "mr": "Mr Bubbly has a shower but forgets to bring a towel." },
+        "past":    { "mrs": "Mrs Bubbly had a quick shower before breakfast.", "mr": "Mr Bubbly had a shower and used all the hot water." },
+        "future":  { "mrs": "Mrs Bubbly will have a shower before the guests arrive.", "mr": "Mr Bubbly will have a shower when he feels like it." },
+        "perfect": { "mrs": "Mrs Bubbly has had a shower and feels completely fresh.", "mr": "Mr Bubbly has had a cold shower because he forgot to turn on the boiler." }
+      }
+    },
+    {
+      "id": 4, "verb": "get dressed", "emoji": "👗", "time": "6:25 am", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly gets dressed carefully and always looks smart.", "mr": "Mr Bubbly gets dressed quickly and always looks a little strange." },
+        "past":    { "mrs": "Mrs Bubbly got dressed and went down for breakfast.", "mr": "Mr Bubbly got dressed in the dark and wore his jumper inside out." },
+        "future":  { "mrs": "Mrs Bubbly will get dressed before she goes to the market.", "mr": "Mr Bubbly will get dressed after he has had his coffee." },
+        "perfect": { "mrs": "Mrs Bubbly has got dressed and is ready to go out.", "mr": "Mr Bubbly has got dressed but is wearing two different shoes." }
+      }
+    },
+    {
+      "id": 5, "verb": "make", "emoji": "☕", "time": "6:35 am", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly makes a pot of tea and puts it on the table.", "mr": "Mr Bubbly makes coffee but always makes it too strong." },
+        "past":    { "mrs": "Mrs Bubbly made tea and put out some biscuits.", "mr": "Mr Bubbly made coffee and forgot to put in any water." },
+        "future":  { "mrs": "Mrs Bubbly will make tea as soon as she gets up.", "mr": "Mr Bubbly will make coffee and leave the cups everywhere." },
+        "perfect": { "mrs": "Mrs Bubbly has made a fresh pot of tea. It is ready.", "mr": "Mr Bubbly has made coffee three times and drunk none of it." }
+      }
+    },
+    {
+      "id": 6, "verb": "eat", "emoji": "🍳", "time": "7:00 am", "scene": "The kitchen table",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly eats a proper breakfast and reads the newspaper.", "mr": "Mr Bubbly eats his breakfast standing up because he is always late." },
+        "past":    { "mrs": "Mrs Bubbly ate scrambled eggs and toast for breakfast.", "mr": "Mr Bubbly ate three biscuits and called it breakfast." },
+        "future":  { "mrs": "Mrs Bubbly will eat a healthy breakfast before her walk.", "mr": "Mr Bubbly will eat breakfast at the table if someone makes it for him." },
+        "perfect": { "mrs": "Mrs Bubbly has eaten breakfast and is ready for the morning.", "mr": "Mr Bubbly has eaten the last biscuit and is looking for more." }
+      }
+    },
+    {
+      "id": 7, "verb": "check", "emoji": "📱", "time": "7:20 am", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly checks her messages and replies before she goes out.", "mr": "Mr Bubbly checks his phone and forgets to eat his breakfast." },
+        "past":    { "mrs": "Mrs Bubbly checked her messages and sent a photo to her daughter.", "mr": "Mr Bubbly checked his phone and liked a post from three years ago." },
+        "future":  { "mrs": "Mrs Bubbly will check the weather before she decides what to wear.", "mr": "Mr Bubbly will check his phone instead of listening to what people say." },
+        "perfect": { "mrs": "Mrs Bubbly has checked her messages and put her phone away.", "mr": "Mr Bubbly has checked his phone fifteen times this morning." }
+      }
+    },
+    {
+      "id": 8, "verb": "go out", "emoji": "🚶", "time": "8:00 am", "scene": "The front door",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly goes out for a walk before nine every morning.", "mr": "Mr Bubbly does not go out in the morning. He is too comfortable." },
+        "past":    { "mrs": "Mrs Bubbly went out early and walked along the river.", "mr": "Mr Bubbly went out to get the newspaper and forgot to come back for an hour." },
+        "future":  { "mrs": "Mrs Bubbly will go out for a walk after breakfast.", "mr": "Mr Bubbly will go out later when it is warmer." },
+        "perfect": { "mrs": "Mrs Bubbly has gone out already. She left at eight.", "mr": "Mr Bubbly has not gone out yet. He is still looking for his coat." }
+      }
+    },
+    {
+      "id": 9, "verb": "walk", "emoji": "🌳", "time": "8:05 am", "scene": "The village",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly walks to the park and back every morning.", "mr": "Mr Bubbly walks to the end of the street and decides it is enough." },
+        "past":    { "mrs": "Mrs Bubbly walked through the park and said hello to everyone.", "mr": "Mr Bubbly walked to the shop and bought the wrong things." },
+        "future":  { "mrs": "Mrs Bubbly will walk to the market this morning.", "mr": "Mr Bubbly will walk to the car and drive to the shop." },
+        "perfect": { "mrs": "Mrs Bubbly has walked three miles this morning already.", "mr": "Mr Bubbly has walked to the kitchen and back. He is tired." }
+      }
+    },
+    {
+      "id": 10, "verb": "meet", "emoji": "👋", "time": "8:30 am", "scene": "The village",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly meets her friend Dorothy for coffee on Tuesdays.", "mr": "Mr Bubbly meets people in the street and cannot remember their names." },
+        "past":    { "mrs": "Mrs Bubbly met an old friend at the market and had coffee with her.", "mr": "Mr Bubbly met his neighbour and called him the wrong name." },
+        "future":  { "mrs": "Mrs Bubbly will meet her daughter at the café at ten.", "mr": "Mr Bubbly will meet someone today and forget the meeting tomorrow." },
+        "perfect": { "mrs": "Mrs Bubbly has met all her neighbours and knows them all by name.", "mr": "Mr Bubbly has met Mrs Bubbly's sister many times and still does not know her name." }
+      }
+    },
+    {
+      "id": 11, "verb": "buy", "emoji": "🛒", "time": "9:00 am", "scene": "The market",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly buys fresh vegetables and fruit at the market.", "mr": "Mr Bubbly buys things they do not need and forgets the things they do." },
+        "past":    { "mrs": "Mrs Bubbly bought bread, vegetables and a bunch of flowers.", "mr": "Mr Bubbly bought the wrong type of milk and a newspaper from two weeks ago." },
+        "future":  { "mrs": "Mrs Bubbly will buy everything on her list and come straight home.", "mr": "Mr Bubbly will buy one thing and come home with five wrong ones." },
+        "perfect": { "mrs": "Mrs Bubbly has bought everything she needs for the week.", "mr": "Mr Bubbly has bought three things that were not on the list." }
+      }
+    },
+    {
+      "id": 12, "verb": "chat", "emoji": "💬", "time": "9:30 am", "scene": "The café",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly chats with Dorothy over a cup of coffee.", "mr": "Mr Bubbly chats to the television when nobody else is listening." },
+        "past":    { "mrs": "Mrs Bubbly chatted with her friend for an hour and loved every minute.", "mr": "Mr Bubbly chatted at the shop and forgot what he came to buy." },
+        "future":  { "mrs": "Mrs Bubbly will chat with her neighbour over the garden fence.", "mr": "Mr Bubbly will chat for too long and miss his bus." },
+        "perfect": { "mrs": "Mrs Bubbly has chatted with three friends already this morning.", "mr": "Mr Bubbly has chatted to the wrong person for twenty minutes." }
+      }
+    },
+    {
+      "id": 13, "verb": "carry", "emoji": "🛍️", "time": "10:00 am", "scene": "The street",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly carries her shopping home in a big cloth bag.", "mr": "Mr Bubbly carries the lightest bag and complains the most." },
+        "past":    { "mrs": "Mrs Bubbly carried two heavy bags and walked all the way home.", "mr": "Mr Bubbly carried one small bag and said his back hurt." },
+        "future":  { "mrs": "Mrs Bubbly will carry the shopping inside when she gets home.", "mr": "Mr Bubbly will carry nothing because he has a bad back. He always does." },
+        "perfect": { "mrs": "Mrs Bubbly has carried the shopping inside and put everything away.", "mr": "Mr Bubbly has carried the shopping as far as the front door." }
+      }
+    },
+    {
+      "id": 14, "verb": "call", "emoji": "📞", "time": "10:30 am", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly calls her daughter every morning to say hello.", "mr": "Mr Bubbly calls the right number but says the wrong things." },
+        "past":    { "mrs": "Mrs Bubbly called her sister and they talked for forty minutes.", "mr": "Mr Bubbly called a wrong number and had a long conversation anyway." },
+        "future":  { "mrs": "Mrs Bubbly will call her mother this evening before dinner.", "mr": "Mr Bubbly will call at the wrong time and talk for too long." },
+        "perfect": { "mrs": "Mrs Bubbly has called all her children this week.", "mr": "Mr Bubbly has called his son's number and spoken to a stranger." }
+      }
+    },
+    {
+      "id": 15, "verb": "tidy up", "emoji": "🧹", "time": "11:00 am", "scene": "The house",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly tidies up the house before she has her coffee.", "mr": "Mr Bubbly tidies up his newspapers by sitting on them." },
+        "past":    { "mrs": "Mrs Bubbly tidied up the kitchen after breakfast.", "mr": "Mr Bubbly tidied up his things and put them all in the wrong places." },
+        "future":  { "mrs": "Mrs Bubbly will tidy up the sitting room before the visitors arrive.", "mr": "Mr Bubbly will tidy up later. He always says that." },
+        "perfect": { "mrs": "Mrs Bubbly has tidied up and the house looks wonderful.", "mr": "Mr Bubbly has tidied up his corner. The rest is Mrs Bubbly's problem." }
+      }
+    },
+    {
+      "id": 16, "verb": "cook", "emoji": "🍲", "time": "11:30 am", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly cooks lunch and always makes enough for two.", "mr": "Mr Bubbly sets off the smoke alarm whenever he cooks." },
+        "past":    { "mrs": "Mrs Bubbly cooked a big pot of soup for the whole family.", "mr": "Mr Bubbly cooked an egg and flooded the kitchen at the same time." },
+        "future":  { "mrs": "Mrs Bubbly will cook a big Sunday lunch for the grandchildren.", "mr": "Mr Bubbly will cook tonight. He will not do it well." },
+        "perfect": { "mrs": "Mrs Bubbly has cooked a wonderful lunch. It smells delicious.", "mr": "Mr Bubbly has cooked something, but nobody can work out what it is." }
+      }
+    },
+    {
+      "id": 17, "verb": "eat lunch", "emoji": "🥗", "time": "12:30 pm", "scene": "The dining room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly eats lunch at the table every day and enjoys it.", "mr": "Mr Bubbly eats lunch in front of the television every single day." },
+        "past":    { "mrs": "Mrs Bubbly ate lunch with her neighbour and had a lovely time.", "mr": "Mr Bubbly ate his lunch so fast he could not remember what it was." },
+        "future":  { "mrs": "Mrs Bubbly will eat lunch in the garden today if it stays sunny.", "mr": "Mr Bubbly will eat lunch at three o'clock because he forgot the time." },
+        "perfect": { "mrs": "Mrs Bubbly has eaten lunch and is having a quiet sit down.", "mr": "Mr Bubbly has eaten two lunches today and is looking for a third." }
+      }
+    },
+    {
+      "id": 18, "verb": "wash up", "emoji": "🫧", "time": "1:00 pm", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly washes up straight after lunch.", "mr": "Mr Bubbly leaves everything in the sink and says he will wash up later." },
+        "past":    { "mrs": "Mrs Bubbly washed up and dried everything before sitting down.", "mr": "Mr Bubbly washed up one plate and declared the job done." },
+        "future":  { "mrs": "Mrs Bubbly will wash up as soon as lunch is finished.", "mr": "Mr Bubbly will wash up after he has had a rest. He needs a long rest." },
+        "perfect": { "mrs": "Mrs Bubbly has washed up and the kitchen is clean and tidy.", "mr": "Mr Bubbly has washed up one mug. The rest is still in the sink." }
+      }
+    },
+    {
+      "id": 19, "verb": "sit down", "emoji": "🪑", "time": "1:30 pm", "scene": "The garden",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly sits down in the garden with a book after lunch.", "mr": "Mr Bubbly sits down on the sofa and does not move for two hours." },
+        "past":    { "mrs": "Mrs Bubbly sat down in the garden and felt the sun on her face.", "mr": "Mr Bubbly sat down to rest and woke up at four o'clock." },
+        "future":  { "mrs": "Mrs Bubbly will sit down with a cup of tea and her book.", "mr": "Mr Bubbly will sit down for a quick rest and wake up at dinner time." },
+        "perfect": { "mrs": "Mrs Bubbly has sat down for a rest and is reading happily.", "mr": "Mr Bubbly has sat down and is already asleep." }
+      }
+    },
+    {
+      "id": 20, "verb": "read", "emoji": "📖", "time": "1:35 pm", "scene": "The garden",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly reads her book for an hour every afternoon.", "mr": "Mr Bubbly reads the TV guide to plan his evening." },
+        "past":    { "mrs": "Mrs Bubbly read twenty pages of her novel in the garden.", "mr": "Mr Bubbly read one page of his book and fell asleep." },
+        "future":  { "mrs": "Mrs Bubbly will read in the garden this afternoon if it is warm.", "mr": "Mr Bubbly will read in the garden but will sleep after five minutes." },
+        "perfect": { "mrs": "Mrs Bubbly has read three chapters today and loves the story.", "mr": "Mr Bubbly has read the same page four times and still does not know what it says." }
+      }
+    },
+    {
+      "id": 21, "verb": "water", "emoji": "🌷", "time": "2:30 pm", "scene": "The garden",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly waters her flowers every afternoon in the summer.", "mr": "Mr Bubbly waters the garden but gets himself more wet than the plants." },
+        "past":    { "mrs": "Mrs Bubbly watered all the plants and then sat down to enjoy them.", "mr": "Mr Bubbly watered the same plant three times and forgot the rest." },
+        "future":  { "mrs": "Mrs Bubbly will water the tomatoes and roses tomorrow morning.", "mr": "Mr Bubbly will water the garden if Mrs Bubbly reminds him." },
+        "perfect": { "mrs": "Mrs Bubbly has watered everything. The garden looks lovely.", "mr": "Mr Bubbly has watered one plant and lost the hose." }
+      }
+    },
+    {
+      "id": 22, "verb": "play", "emoji": "⚽", "time": "3:00 pm", "scene": "The garden",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly plays with the grandchildren in the garden every week.", "mr": "Mr Bubbly plays games on his tablet and calls it keeping active." },
+        "past":    { "mrs": "Mrs Bubbly played in the garden with the grandchildren all afternoon.", "mr": "Mr Bubbly played with the grandchildren for five minutes and sat down." },
+        "future":  { "mrs": "Mrs Bubbly will play in the garden with the children tomorrow.", "mr": "Mr Bubbly will play for a bit and then go inside for a rest." },
+        "perfect": { "mrs": "Mrs Bubbly has played every game they asked and enjoyed every one.", "mr": "Mr Bubbly has played two games, lost both, and decided it is teatime." }
+      }
+    },
+    {
+      "id": 23, "verb": "pick up", "emoji": "🛍️", "time": "3:30 pm", "scene": "The street",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly picks up the grandchildren from school every Tuesday.", "mr": "Mr Bubbly picks up the wrong child from school once a term." },
+        "past":    { "mrs": "Mrs Bubbly picked up the children and took them to the park.", "mr": "Mr Bubbly picked up some things at the shop on the way home." },
+        "future":  { "mrs": "Mrs Bubbly will pick up some fresh bread on the way home.", "mr": "Mr Bubbly will pick up the children and then forget where he parked." },
+        "perfect": { "mrs": "Mrs Bubbly has picked up the children and brought them home safely.", "mr": "Mr Bubbly has picked up the children. He thinks. He cannot quite remember." }
+      }
+    },
+    {
+      "id": 24, "verb": "help", "emoji": "🤝", "time": "4:00 pm", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly helps the grandchildren with their homework.", "mr": "Mr Bubbly helps with homework and gets the answers wrong." },
+        "past":    { "mrs": "Mrs Bubbly helped her neighbour move some heavy furniture.", "mr": "Mr Bubbly helped in the kitchen and dropped everything he picked up." },
+        "future":  { "mrs": "Mrs Bubbly will help her daughter with the cooking on Sunday.", "mr": "Mr Bubbly will help with dinner by eating all the food before it is ready." },
+        "perfect": { "mrs": "Mrs Bubbly has helped the children with their homework and reading.", "mr": "Mr Bubbly has helped the children get the wrong answers to three questions." }
+      }
+    },
+    {
+      "id": 25, "verb": "talk", "emoji": "💬", "time": "4:30 pm", "scene": "The sitting room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly talks to her grandchildren and listens to everything they say.", "mr": "Mr Bubbly talks but does not always listen to the answers." },
+        "past":    { "mrs": "Mrs Bubbly talked to her daughter on the phone for an hour.", "mr": "Mr Bubbly talked about his knee for thirty minutes without stopping." },
+        "future":  { "mrs": "Mrs Bubbly will talk to her sister at the weekend.", "mr": "Mr Bubbly will talk about things nobody asked about." },
+        "perfect": { "mrs": "Mrs Bubbly has talked to everyone in the family today.", "mr": "Mr Bubbly has talked for three hours and said very little." }
+      }
+    },
+    {
+      "id": 26, "verb": "prepare", "emoji": "🥗", "time": "5:30 pm", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly prepares dinner carefully and always makes extra.", "mr": "Mr Bubbly prepares to help and then sits down." },
+        "past":    { "mrs": "Mrs Bubbly prepared a salad, soup and some fresh bread.", "mr": "Mr Bubbly prepared to help and prepared nothing else." },
+        "future":  { "mrs": "Mrs Bubbly will prepare dinner before the guests arrive.", "mr": "Mr Bubbly will prepare to help but Mrs Bubbly will do everything." },
+        "perfect": { "mrs": "Mrs Bubbly has prepared a lovely dinner. Everything is ready.", "mr": "Mr Bubbly has prepared himself a biscuit. That is all." }
+      }
+    },
+    {
+      "id": 27, "verb": "set", "emoji": "🍽️", "time": "6:00 pm", "scene": "The dining room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly sets the table nicely for dinner every evening.", "mr": "Mr Bubbly sets the table but always puts the knives and forks the wrong way." },
+        "past":    { "mrs": "Mrs Bubbly set the table with cloth napkins and candles.", "mr": "Mr Bubbly set the table and forgot the glasses and the plates." },
+        "future":  { "mrs": "Mrs Bubbly will set the table before the soup is ready.", "mr": "Mr Bubbly will set the table if someone tells him what to do." },
+        "perfect": { "mrs": "Mrs Bubbly has set a beautiful table for dinner.", "mr": "Mr Bubbly has set the table with everything in the wrong place." }
+      }
+    },
+    {
+      "id": 28, "verb": "arrive", "emoji": "🚪", "time": "7:00 pm", "scene": "The front door",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly always arrives at the door before her guests knock.", "mr": "Mr Bubbly arrives at the table after the first course is finished." },
+        "past":    { "mrs": "Mrs Bubbly arrived early and helped her friend set up for the party.", "mr": "Mr Bubbly arrived at the party on the wrong day." },
+        "future":  { "mrs": "Mrs Bubbly will arrive on time and bring something lovely.", "mr": "Mr Bubbly will arrive late and say there was traffic." },
+        "perfect": { "mrs": "Mrs Bubbly has arrived and brought flowers and a cake.", "mr": "Mr Bubbly has arrived at the wrong house and sat down for dinner." }
+      }
+    },
+    {
+      "id": 29, "verb": "pour", "emoji": "🍷", "time": "7:05 pm", "scene": "The dining room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly pours drinks for everyone as soon as they sit down.", "mr": "Mr Bubbly pours his own drink first and then asks if anyone else wants one." },
+        "past":    { "mrs": "Mrs Bubbly poured everyone a drink and made sure no one was forgotten.", "mr": "Mr Bubbly poured the juice into the wine glasses by mistake." },
+        "future":  { "mrs": "Mrs Bubbly will pour the tea as soon as it is ready.", "mr": "Mr Bubbly will pour something into something and hope for the best." },
+        "perfect": { "mrs": "Mrs Bubbly has poured everyone a drink. Dinner is almost ready.", "mr": "Mr Bubbly has poured himself a second drink before anyone else has had a first." }
+      }
+    },
+    {
+      "id": 30, "verb": "eat dinner", "emoji": "🍴", "time": "7:00 pm", "scene": "The dining room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly eats dinner slowly and enjoys every bite.", "mr": "Mr Bubbly eats dinner in three minutes and goes back for more." },
+        "past":    { "mrs": "Mrs Bubbly ate dinner with the whole family around the table.", "mr": "Mr Bubbly ate his dinner so fast he did not taste any of it." },
+        "future":  { "mrs": "Mrs Bubbly will eat dinner at seven with the family.", "mr": "Mr Bubbly will eat dinner early because he cannot wait." },
+        "perfect": { "mrs": "Mrs Bubbly has eaten dinner and everyone loved it.", "mr": "Mr Bubbly has eaten dinner and is already thinking about dessert." }
+      }
+    },
+    {
+      "id": 31, "verb": "tell", "emoji": "📖", "time": "7:30 pm", "scene": "The dining room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly tells funny stories about the village at dinner.", "mr": "Mr Bubbly tells the same story every week and laughs at it every time." },
+        "past":    { "mrs": "Mrs Bubbly told a funny story about her holiday and made everyone laugh.", "mr": "Mr Bubbly told his knee story. Again." },
+        "future":  { "mrs": "Mrs Bubbly will tell everyone about her new garden project.", "mr": "Mr Bubbly will tell a long story that started in 1978." },
+        "perfect": { "mrs": "Mrs Bubbly has told the best stories at the dinner table tonight.", "mr": "Mr Bubbly has told that story so many times it now has a different ending." }
+      }
+    },
+    {
+      "id": 32, "verb": "laugh", "emoji": "😂", "time": "7:45 pm", "scene": "The dining room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly laughs a lot and makes everyone feel at home.", "mr": "Mr Bubbly laughs at his own jokes and nobody else does." },
+        "past":    { "mrs": "Mrs Bubbly laughed until she had tears on her face.", "mr": "Mr Bubbly laughed at the wrong moment during the sad part of the film." },
+        "future":  { "mrs": "Mrs Bubbly will laugh a lot tonight. She always does.", "mr": "Mr Bubbly will laugh at something nobody else finds funny." },
+        "perfect": { "mrs": "Mrs Bubbly has laughed every day this week and feels wonderful.", "mr": "Mr Bubbly has laughed at himself twice today and not noticed." }
+      }
+    },
+    {
+      "id": 33, "verb": "clear up", "emoji": "🧽", "time": "8:00 pm", "scene": "The kitchen",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly clears up after dinner while everyone else sits down.", "mr": "Mr Bubbly clears up his own things and leaves the rest for Mrs Bubbly." },
+        "past":    { "mrs": "Mrs Bubbly cleared up the kitchen in twenty minutes.", "mr": "Mr Bubbly cleared up his plate and sat back down." },
+        "future":  { "mrs": "Mrs Bubbly will clear up after dinner as she always does.", "mr": "Mr Bubbly will clear up tomorrow. He needs a rest first." },
+        "perfect": { "mrs": "Mrs Bubbly has cleared up and the kitchen looks perfect.", "mr": "Mr Bubbly has cleared up two things. The rest is Mrs Bubbly's job, he says." }
+      }
+    },
+    {
+      "id": 34, "verb": "send", "emoji": "📱", "time": "8:30 pm", "scene": "The sofa",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly sends a message to all her children in the evening.", "mr": "Mr Bubbly sends voice messages at full volume in the sitting room." },
+        "past":    { "mrs": "Mrs Bubbly sent a long message to her daughter to say she was proud of her.", "mr": "Mr Bubbly sent a very personal message to the wrong person." },
+        "future":  { "mrs": "Mrs Bubbly will send a message to say goodnight to everyone.", "mr": "Mr Bubbly will send a message with the wrong photo again." },
+        "perfect": { "mrs": "Mrs Bubbly has sent a goodnight message to every one of her children.", "mr": "Mr Bubbly has sent a voice message to the whole family by mistake." }
+      }
+    },
+    {
+      "id": 35, "verb": "watch", "emoji": "📺", "time": "9:00 pm", "scene": "The sitting room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly watches one episode of her favourite programme.", "mr": "Mr Bubbly watches TV all evening and falls asleep in his chair." },
+        "past":    { "mrs": "Mrs Bubbly watched a documentary and talked about it all week.", "mr": "Mr Bubbly watched the same programme twice and thought it was different." },
+        "future":  { "mrs": "Mrs Bubbly will watch her programme at nine and go to bed at ten.", "mr": "Mr Bubbly will watch TV until Mrs Bubbly turns it off." },
+        "perfect": { "mrs": "Mrs Bubbly has watched two good films this week.", "mr": "Mr Bubbly has watched TV for six hours today." }
+      }
+    },
+    {
+      "id": 36, "verb": "catch up", "emoji": "💬", "time": "9:30 pm", "scene": "The sitting room",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly catches up with her daughter on the phone every evening.", "mr": "Mr Bubbly catches up on programmes he has already seen." },
+        "past":    { "mrs": "Mrs Bubbly caught up with an old friend and they talked for an hour.", "mr": "Mr Bubbly caught up on the news and got very worried about everything." },
+        "future":  { "mrs": "Mrs Bubbly will catch up with her friend at the weekend.", "mr": "Mr Bubbly will catch up on his sleep. Starting now." },
+        "perfect": { "mrs": "Mrs Bubbly has caught up with all her friends this week.", "mr": "Mr Bubbly has never quite caught up with anything." }
+      }
+    },
+    {
+      "id": 37, "verb": "lock up", "emoji": "🔐", "time": "10:00 pm", "scene": "The hallway",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly locks up the house every night before bed.", "mr": "Mr Bubbly locks the front door and forgets the back door is open." },
+        "past":    { "mrs": "Mrs Bubbly locked up the house and went straight to bed.", "mr": "Mr Bubbly locked himself out for the second time this month." },
+        "future":  { "mrs": "Mrs Bubbly will lock up the house as soon as the children leave.", "mr": "Mr Bubbly will lock up and leave his keys inside." },
+        "perfect": { "mrs": "Mrs Bubbly has locked up the house. Everything is safe.", "mr": "Mr Bubbly has locked the wrong door and is not sure where his key is." }
+      }
+    },
+    {
+      "id": 38, "verb": "turn off", "emoji": "💡", "time": "10:10 pm", "scene": "The house",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly turns off all the lights before she goes to bed.", "mr": "Mr Bubbly turns off one light and leaves all the others on." },
+        "past":    { "mrs": "Mrs Bubbly turned off the TV, the lights and the heating.", "mr": "Mr Bubbly turned off the bedroom light and turned on the kitchen." },
+        "future":  { "mrs": "Mrs Bubbly will turn off every light in the house tonight.", "mr": "Mr Bubbly will turn off something but it will be the wrong thing." },
+        "perfect": { "mrs": "Mrs Bubbly has turned off everything. The house is ready for the night.", "mr": "Mr Bubbly has turned off two lights and left four on." }
+      }
+    },
+    {
+      "id": 39, "verb": "put on", "emoji": "😴", "time": "10:20 pm", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly puts on her pyjamas and brushes her hair.", "mr": "Mr Bubbly puts on his pyjamas over his daytime clothes." },
+        "past":    { "mrs": "Mrs Bubbly put on her pyjamas and read in bed.", "mr": "Mr Bubbly put on his pyjamas and came back downstairs for another biscuit." },
+        "future":  { "mrs": "Mrs Bubbly will put on her pyjamas and go straight to bed.", "mr": "Mr Bubbly will put on his pyjamas and watch another programme." },
+        "perfect": { "mrs": "Mrs Bubbly has put on her pyjamas and is ready for bed.", "mr": "Mr Bubbly has put on his jumper instead of his pyjama top by mistake." }
+      }
+    },
+    {
+      "id": 40, "verb": "set an alarm", "emoji": "⏰", "time": "10:30 pm", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly sets her alarm for six o'clock every night.", "mr": "Mr Bubbly sets an alarm for the wrong time on the wrong day." },
+        "past":    { "mrs": "Mrs Bubbly set her alarm and went to sleep within minutes.", "mr": "Mr Bubbly set three different alarms and kept waking Mrs Bubbly up." },
+        "future":  { "mrs": "Mrs Bubbly will set her alarm before she goes to sleep.", "mr": "Mr Bubbly will set his alarm and then set it again because he does not trust himself." },
+        "perfect": { "mrs": "Mrs Bubbly has set her alarm and turned off her light.", "mr": "Mr Bubbly has set five alarms and woken the whole house with them." }
+      }
+    },
+    {
+      "id": 41, "verb": "read", "emoji": "📚", "time": "10:35 pm", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly reads in bed for half an hour every night.", "mr": "Mr Bubbly reads the same paragraph over and over again." },
+        "past":    { "mrs": "Mrs Bubbly read ten pages and fell asleep smiling.", "mr": "Mr Bubbly read one sentence and was immediately fast asleep." },
+        "future":  { "mrs": "Mrs Bubbly will read in bed tonight and finish her chapter.", "mr": "Mr Bubbly will try to read but will be asleep in two minutes." },
+        "perfect": { "mrs": "Mrs Bubbly has read four books this month.", "mr": "Mr Bubbly has read the same page for three nights." }
+      }
+    },
+    {
+      "id": 42, "verb": "fall asleep", "emoji": "💤", "time": "11:00 pm", "scene": "The bedroom",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly falls asleep quickly and sleeps all night.", "mr": "Mr Bubbly falls asleep during films, at dinner, and in the car." },
+        "past":    { "mrs": "Mrs Bubbly fell asleep as soon as her head touched the pillow.", "mr": "Mr Bubbly fell asleep in his chair with his glasses on." },
+        "future":  { "mrs": "Mrs Bubbly will fall asleep quickly tonight after a busy day.", "mr": "Mr Bubbly will fall asleep before the first page of his book." },
+        "perfect": { "mrs": "Mrs Bubbly has fallen asleep. She looks very peaceful.", "mr": "Mr Bubbly has fallen asleep in his chair. Again." }
+      }
+    },
+    {
+      "id": 43, "verb": "sleep", "emoji": "😴", "time": "Midnight", "scene": "The quiet house",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly sleeps eight hours every night.", "mr": "Mr Bubbly sleeps ten hours and is still tired in the morning." },
+        "past":    { "mrs": "Mrs Bubbly slept well and woke up feeling great.", "mr": "Mr Bubbly slept through the alarm, the phone and the dog barking." },
+        "future":  { "mrs": "Mrs Bubbly will sleep well tonight. She always does.", "mr": "Mr Bubbly will sleep very well and wake up very late." },
+        "perfect": { "mrs": "Mrs Bubbly has slept well every night this week.", "mr": "Mr Bubbly has slept for nine hours and wants more." }
+      }
+    },
+    {
+      "id": 44, "verb": "think", "emoji": "💭", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly thinks about her family all the time.", "mr": "Mr Bubbly thinks about food and what to watch on TV." },
+        "past":    { "mrs": "Mrs Bubbly thought of a lovely idea for her granddaughter's birthday.", "mr": "Mr Bubbly thought he locked the door. He did not." },
+        "future":  { "mrs": "Mrs Bubbly will think about what to do this weekend.", "mr": "Mr Bubbly will think about it and forget to do anything." },
+        "perfect": { "mrs": "Mrs Bubbly has thought of a wonderful present for everyone.", "mr": "Mr Bubbly has thought about something important and already forgotten it." }
+      }
+    },
+    {
+      "id": 45, "verb": "forget", "emoji": "💨", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly never forgets a birthday or a kind word.", "mr": "Mr Bubbly forgets everything before it happens." },
+        "past":    { "mrs": "Mrs Bubbly forgot only to sit down and rest all day.", "mr": "Mr Bubbly forgot his keys, his bag and where he was going." },
+        "future":  { "mrs": "Mrs Bubbly will not forget. She has written it all down.", "mr": "Mr Bubbly will forget what he was just told before he leaves the room." },
+        "perfect": { "mrs": "Mrs Bubbly has never forgotten a single birthday in fifty years.", "mr": "Mr Bubbly has forgotten why he came into the room. He does it ten times a day." }
+      }
+    },
+    {
+      "id": 46, "verb": "remember", "emoji": "⭐", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly remembers every birthday and every anniversary.", "mr": "Mr Bubbly remembers old football scores but nothing else." },
+        "past":    { "mrs": "Mrs Bubbly remembered to call the plumber before the pipe burst.", "mr": "Mr Bubbly remembered it was Thursday when it was Wednesday." },
+        "future":  { "mrs": "Mrs Bubbly will remember everything on her list.", "mr": "Mr Bubbly will remember eventually. He just cannot say when." },
+        "perfect": { "mrs": "Mrs Bubbly has remembered every name, every date and every favour.", "mr": "Mr Bubbly has remembered one thing today. He is very proud of himself." }
+      }
+    },
+    {
+      "id": 47, "verb": "look after", "emoji": "🧒", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly looks after the grandchildren every Wednesday.", "mr": "Mr Bubbly looks after himself and hopes that is enough." },
+        "past":    { "mrs": "Mrs Bubbly looked after the children and baked biscuits at the same time.", "mr": "Mr Bubbly looked after the dog and the dog ran away." },
+        "future":  { "mrs": "Mrs Bubbly will look after everyone who needs it.", "mr": "Mr Bubbly will look after the house while Mrs Bubbly is away. He says." },
+        "perfect": { "mrs": "Mrs Bubbly has looked after this family with all her heart.", "mr": "Mr Bubbly has looked after the cat. The cat ate his biscuits." }
+      }
+    },
+    {
+      "id": 48, "verb": "find", "emoji": "🔍", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly always finds what she is looking for.", "mr": "Mr Bubbly cannot find anything, ever, at all." },
+        "past":    { "mrs": "Mrs Bubbly found the missing letter under the mat.", "mr": "Mr Bubbly found his glasses. They were on his head." },
+        "future":  { "mrs": "Mrs Bubbly will find the right words to say.", "mr": "Mr Bubbly will not find his keys before ten o'clock." },
+        "perfect": { "mrs": "Mrs Bubbly has found everything she was looking for today.", "mr": "Mr Bubbly has found one sock and is still looking for the other." }
+      }
+    },
+    {
+      "id": 49, "verb": "give", "emoji": "🎁", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly gives something to someone every single day.", "mr": "Mr Bubbly gives advice that nobody asked for." },
+        "past":    { "mrs": "Mrs Bubbly gave her neighbour some flowers from the garden.", "mr": "Mr Bubbly gave the wrong present to the wrong person." },
+        "future":  { "mrs": "Mrs Bubbly will give everyone a lovely present this Christmas.", "mr": "Mr Bubbly will give up wrapping and use a bag." },
+        "perfect": { "mrs": "Mrs Bubbly has given a gift to everyone in the family.", "mr": "Mr Bubbly has given away the good umbrella. He does not know to whom." }
+      }
+    },
+    {
+      "id": 50, "verb": "keep", "emoji": "💛", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly keeps every card and letter the grandchildren send her.", "mr": "Mr Bubbly keeps every newspaper since 1986." },
+        "past":    { "mrs": "Mrs Bubbly kept every promise she ever made to her family.", "mr": "Mr Bubbly kept the wrong receipts and threw the right ones away." },
+        "future":  { "mrs": "Mrs Bubbly will keep smiling every day of her life.", "mr": "Mr Bubbly will keep sitting in his chair. That is his plan." },
+        "perfect": { "mrs": "Mrs Bubbly has kept this family together through everything.", "mr": "Mr Bubbly has kept all his newspapers. The garage is full." }
+      }
+    },
+    {
+      "id": 51, "verb": "share", "emoji": "🫶", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly shares her food, her time and her kindness.", "mr": "Mr Bubbly shares things when there is nothing left to keep." },
+        "past":    { "mrs": "Mrs Bubbly shared her last biscuit with the postman.", "mr": "Mr Bubbly shared a story about himself for forty-five minutes." },
+        "future":  { "mrs": "Mrs Bubbly will share everything she has with her neighbours.", "mr": "Mr Bubbly will share his opinion on everything, wanted or not." },
+        "perfect": { "mrs": "Mrs Bubbly has shared her home, her table and her heart.", "mr": "Mr Bubbly has shared his opinion six times today already." }
+      }
+    },
+    {
+      "id": 52, "verb": "smile", "emoji": "😊", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly smiles when she wakes up every morning.", "mr": "Mr Bubbly smiles when he sees his favourite biscuits." },
+        "past":    { "mrs": "Mrs Bubbly smiled at every person she passed on her walk.", "mr": "Mr Bubbly smiled when he found the TV remote under the sofa." },
+        "future":  { "mrs": "Mrs Bubbly will smile at everyone she sees today.", "mr": "Mr Bubbly will smile when dinner is ready." },
+        "perfect": { "mrs": "Mrs Bubbly has smiled all day and made everyone feel happy.", "mr": "Mr Bubbly has smiled twice today. Once at food and once at the TV." }
+      }
+    },
+    {
+      "id": 53, "verb": "say", "emoji": "💬", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly always says please and thank you.", "mr": "Mr Bubbly says sorry a lot but keeps doing the same things." },
+        "past":    { "mrs": "Mrs Bubbly said something kind to everyone she met.", "mr": "Mr Bubbly said the wrong name to the right person." },
+        "future":  { "mrs": "Mrs Bubbly will say goodbye and leave a little gift.", "mr": "Mr Bubbly will say he will do it and then not do it." },
+        "perfect": { "mrs": "Mrs Bubbly has said something kind to everyone today.", "mr": "Mr Bubbly has said sorry to three people today." }
+      }
+    },
+    {
+      "id": 54, "verb": "know", "emoji": "🧠", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly knows every person in the village by name.", "mr": "Mr Bubbly knows what he likes and not much else." },
+        "past":    { "mrs": "Mrs Bubbly knew exactly what to say to cheer her friend up.", "mr": "Mr Bubbly knew the answer but said the wrong thing anyway." },
+        "future":  { "mrs": "Mrs Bubbly will know what to do in any situation.", "mr": "Mr Bubbly will not know where he put his glasses." },
+        "perfect": { "mrs": "Mrs Bubbly has known her best friend for forty-five years.", "mr": "Mr Bubbly has known his neighbour for twenty years and still gets his name wrong." }
+      }
+    },
+    {
+      "id": 55, "verb": "feel", "emoji": "💛", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly feels grateful for every single day.", "mr": "Mr Bubbly feels cold, tired or hungry. Usually all three." },
+        "past":    { "mrs": "Mrs Bubbly felt very happy at the village party.", "mr": "Mr Bubbly felt confused all morning and some of the afternoon." },
+        "future":  { "mrs": "Mrs Bubbly will feel better after her walk and a cup of tea.", "mr": "Mr Bubbly will feel better after a nap. He always does." },
+        "perfect": { "mrs": "Mrs Bubbly has felt happy all week and plans to continue.", "mr": "Mr Bubbly has felt tired all week. It is the chair." }
+      }
+    },
+    {
+      "id": 56, "verb": "love", "emoji": "❤️", "time": "Always", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly loves her family, her garden and her neighbours.", "mr": "Mr Bubbly loves his TV, his chair and his biscuits." },
+        "past":    { "mrs": "Mrs Bubbly loved every moment of the village fair.", "mr": "Mr Bubbly loved the food at the fair and ate too much of it." },
+        "future":  { "mrs": "Mrs Bubbly will love every day she has with her family.", "mr": "Mr Bubbly will love Mrs Bubbly every day for the rest of his life." },
+        "perfect": { "mrs": "Mrs Bubbly has loved this family with all her heart.", "mr": "Mr Bubbly has loved Mrs Bubbly for fifty years. He would do it all again." }
+      }
+    },
+    {
+      "id": 57, "verb": "carry on", "emoji": "💪", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly carries on and keeps going no matter what.", "mr": "Mr Bubbly carries on doing things the same way and expects different results." },
+        "past":    { "mrs": "Mrs Bubbly carried on cheerfully after the roof started leaking.", "mr": "Mr Bubbly carried on talking through the film and missed the whole story." },
+        "future":  { "mrs": "Mrs Bubbly will carry on being wonderful, as always.", "mr": "Mr Bubbly will carry on as normal. Everyone expects it now." },
+        "perfect": { "mrs": "Mrs Bubbly has carried on through every difficult moment.", "mr": "Mr Bubbly has carried on doing things his own way. The results are interesting." }
+      }
+    },
+    {
+      "id": 58, "verb": "look forward to", "emoji": "✨", "time": "Every day", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly looks forward to every new day with a smile.", "mr": "Mr Bubbly looks forward to lunch, dinner and sitting in his chair." },
+        "past":    { "mrs": "Mrs Bubbly looked forward to the village party for two weeks.", "mr": "Mr Bubbly looked forward to the party but fell asleep during the first song." },
+        "future":  { "mrs": "Mrs Bubbly will look forward to seeing her family next week.", "mr": "Mr Bubbly will look forward to the weekend because of the football." },
+        "perfect": { "mrs": "Mrs Bubbly has always looked forward to Mondays.", "mr": "Mr Bubbly has looked forward to his nap all morning." }
+      }
+    },
+    {
+      "id": 59, "verb": "get on with", "emoji": "🤝", "time": "Every day", "scene": "The village",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly gets on with everyone she has ever met.", "mr": "Mr Bubbly gets on with things in his own time, at his own pace." },
+        "past":    { "mrs": "Mrs Bubbly got on with the new neighbours straight away.", "mr": "Mr Bubbly got on with fixing the shelf and broke two more." },
+        "future":  { "mrs": "Mrs Bubbly will get on with the baking this afternoon.", "mr": "Mr Bubbly will get on with the garage eventually." },
+        "perfect": { "mrs": "Mrs Bubbly has always got on with everyone around her.", "mr": "Mr Bubbly has got on with his day at his own speed." }
+      }
+    },
+    {
+      "id": 60, "verb": "live", "emoji": "🌟", "time": "Always", "scene": "The Bubbly home",
+      "tenses": {
+        "present": { "mrs": "Mrs Bubbly lives every day as if it is a gift.", "mr": "Mr Bubbly lives a comfortable life in his favourite chair." },
+        "past":    { "mrs": "Mrs Bubbly lived in France for a year when she was young.", "mr": "Mr Bubbly lived next to the sea for two years and never once went for a swim." },
+        "future":  { "mrs": "Mrs Bubbly will live every day with joy and purpose.", "mr": "Mr Bubbly will live happily and comfortably for a very long time." },
+        "perfect": { "mrs": "Mrs Bubbly has lived a full, happy and wonderful life.", "mr": "Mr Bubbly has lived a very comfortable life and is grateful for every biscuit." }
+      }
+    }
+  ]
+}
