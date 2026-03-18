@@ -222,24 +222,26 @@ body::after{
 .sentence-zone{
   flex:1;min-height:0;
   display:flex;align-items:center;
-  padding:20px 36px 14px;
+  padding:18px 40px 12px;
 }
-@media(max-width:520px){.sentence-zone{padding:14px 22px 10px}}
+@media(max-width:520px){.sentence-zone{padding:12px 22px 8px}}
 .sentence{
-  font-family:'Instrument Sans',sans-serif;
-  font-size:clamp(21px,4vw,43px);
-  font-weight:400;line-height:1.42;
-  color:var(--ink-2);width:100%;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(30px,5.2vw,64px);
+  font-weight:600;line-height:1.22;
+  letter-spacing:-.3px;
+  color:var(--ink);width:100%;
 }
-/* highlighted verb */
+/* highlighted verb — bold, coloured, no italic so it stays legible at poster scale */
 .vw{
-  font-weight:600;font-style:italic;
+  font-weight:900;
   display:inline-block;
+  position:relative;
 }
 .vw.bounce{animation:vbounce .42s ease-in-out infinite alternate}
 @keyframes vbounce{
-  from{transform:translateY(0) rotate(-1deg) scale(1)}
-  to  {transform:translateY(-5px) rotate(.8deg) scale(1.04)}
+  from{transform:translateY(0) scale(1)}
+  to  {transform:translateY(-6px) scale(1.05)}
 }
 
 /* ── CARD FOOTER ── */
@@ -262,23 +264,27 @@ body::after{
   flex:1;
 }
 .spk-btn{
-  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.09);
-  cursor:pointer;font-size:14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  cursor:pointer;font-size:18px;
   transition:background .15s,border-color .15s,transform .12s;
   box-shadow:0 2px 8px rgba(0,0,0,.35);
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  user-select:none;
 }
-.spk-btn:hover{background:rgba(255,255,255,.09)}
-.spk-btn:active{transform:scale(.92)}
+.spk-btn:hover{background:rgba(255,255,255,.12)}
+.spk-btn:active{transform:scale(.9)}
 .spk-btn.live{
-  background:var(--gold);border-color:var(--gold);
+  background:var(--gold);border-color:var(--gold);color:#0c0c0c;
+  font-size:16px;
   animation:spkglow 1.1s ease-in-out infinite;
 }
 @keyframes spkglow{
   0%,100%{box-shadow:0 0 12px var(--gold-glow),0 2px 8px rgba(0,0,0,.35)}
-  50%    {box-shadow:0 0 24px rgba(201,169,97,.45),0 2px 8px rgba(0,0,0,.35)}
+  50%    {box-shadow:0 0 28px rgba(201,169,97,.5),0 2px 8px rgba(0,0,0,.35)}
 }
 
 /* card entrance */
@@ -542,6 +548,7 @@ speechSynthesis.onvoiceschanged=loadVoice;loadVoice();
 function stopSpeech(){
   speechSynthesis.cancel();
   isSpeaking=false;
+  currentSide=null;
   ['fSpk','bSpk'].forEach(id=>{
     const b=document.getElementById(id);
     if(b){b.classList.remove('live');b.textContent='🔊'}
@@ -562,15 +569,22 @@ function speakText(text,btnId,sentId){
   u.onend=u.onerror=()=>{
     btn.classList.remove('live');btn.textContent='🔊';
     isSpeaking=false;
+    currentSide=null;
     document.querySelectorAll('.vw').forEach(el=>el.classList.remove('bounce'));
     if(watchMode)watchAfterSpeech();
   };
   speechSynthesis.speak(u);
 }
 
+let currentSide=null; // tracks which side is currently speaking
+
 function speak(side){
-  if(isSpeaking){stopSpeech();return}
   const v=V[cur];if(!v)return;
+  /* If already speaking THIS side → stop (toggle off) */
+  if(isSpeaking && currentSide===side){stopSpeech();return}
+  /* Otherwise stop whatever is playing and start this side */
+  stopSpeech();
+  currentSide=side;
   if(side==='front') speakText(v.tenses[tense].mrs,'fSpk','fSent');
   else               speakText(v.tenses[tense].mr, 'bSpk','bSent');
 }
@@ -581,17 +595,136 @@ function speak(side){
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function reEsc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 
+/* ── Irregular verb map (base → [past, past participle]) ── */
+const IRREG={
+  wake:['woke','woken'],
+  get:['got','got','gotten'],
+  have:['had','had'],
+  make:['made','made'],
+  eat:['ate','eaten'],
+  check:['checked','checked'],
+  walk:['walked','walked'],
+  catch:['caught','caught'],
+  run:['ran','run'],
+  meet:['met','met'],
+  grab:['grabbed','grabbed'],
+  drop:['dropped','dropped'],
+  sort:['sorted','sorted'],
+  tidy:['tidied','tidied'],
+  cook:['cooked','cooked'],
+  deal:['dealt','dealt'],
+  look:['looked','looked'],
+  pick:['picked','picked'],
+  sit:['sat','sat'],
+  water:['watered','watered'],
+  fix:['fixed','fixed'],
+  bring:['brought','brought'],
+  listen:['listened','listened'],
+  prepare:['prepared','prepared'],
+  set:['set','set'],
+  arrive:['arrived','arrived'],
+  pour:['poured','poured'],
+  tell:['told','told'],
+  laugh:['laughed','laughed'],
+  send:['sent','sent'],
+  fill:['filled','filled'],
+  read:['read','read'],
+  think:['thought','thought'],
+  fall:['fell','fallen'],
+  sleep:['slept','slept'],
+  dream:['dreamed','dreamed','dreamt'],
+  share:['shared','shared'],
+  keep:['kept','kept'],
+  give:['gave','given'],
+  remember:['remembered','remembered'],
+  forget:['forgot','forgotten'],
+  love:['loved','loved'],
+  live:['lived','lived'],
+  carry:['carried','carried'],
+  come:['came','come'],
+  turn:['turned','turned']
+};
+
+function inflections(verb){
+  /* Returns every form we want to highlight for this verb */
+  const v=verb.toLowerCase().trim();
+  const forms=new Set();
+
+  /* If multi-word (e.g. "get up", "sort out"), collect all words */
+  const words=v.split(/\s+/);
+  const base=words[0];
+  const particle=words.slice(1).join(' '); // "up", "out", "after", etc.
+
+  function addForms(b){
+    forms.add(b);
+    // regular inflections
+    if(b.endsWith('e')){
+      forms.add(b+'s');forms.add(b+'d');forms.add(b.slice(0,-1)+'ing');
+    } else if(b.endsWith('y')&&!/[aeiou]y$/.test(b)){
+      forms.add(b.slice(0,-1)+'ies');forms.add(b.slice(0,-1)+'ied');forms.add(b+'ing');
+    } else {
+      forms.add(b+'s');forms.add(b+'ed');forms.add(b+'ing');
+      // double consonant
+      const m=b.match(/[aeiou]([bcdfghjklmnpqrstvwxyz])$/);
+      if(m){forms.add(b+m[1]+'ed');forms.add(b+m[1]+'ing')}
+    }
+    // irregular
+    const irr=IRREG[b];
+    if(irr)irr.forEach(f=>forms.add(f));
+  }
+
+  addForms(base);
+
+  /* Build final array: include particle where needed */
+  const result=[];
+  forms.forEach(f=>{
+    if(particle){
+      /* multi-word: match "gets up", "got up", "getting up", "sort out", etc. */
+      result.push(f+'\\s+'+reEsc(particle));
+    } else {
+      result.push(reEsc(f));
+    }
+  });
+
+  /* Also add "will + base[+particle]" and "has/have/had + pp[+particle]" */
+  const pp=(IRREG[base]&&IRREG[base][1])||base+'ed';
+  if(particle){
+    result.push('will\\s+'+reEsc(base)+'\\s+'+reEsc(particle));
+    result.push('(?:has|have|had)\\s+'+reEsc(pp)+'\\s+'+reEsc(particle));
+    result.push('never\\s+'+reEsc(base)+'\\s+'+reEsc(particle));
+    result.push('never\\s+'+reEsc(pp)+'\\s+'+reEsc(particle));
+    result.push('always\\s+'+reEsc(base)+'\\s+'+reEsc(particle));
+  } else {
+    result.push('will\\s+'+reEsc(base));
+    result.push('(?:has|have|had)\\s+'+reEsc(pp));
+    result.push('never\\s+'+reEsc(base));
+    result.push('never\\s+'+reEsc(pp));
+    result.push('always\\s+'+reEsc(base));
+  }
+
+  /* sort longest first so greedy match picks multi-word before single */
+  result.sort((a,b)=>b.length-a.length);
+  return result;
+}
+
 function markVerb(sentence,verb,col){
   let s=esc(sentence);
-  // build a loose pattern covering base form + common inflections
-  const b=reEsc(verb);
-  const root=reEsc(verb.replace(/e$/,''));
-  const pat=new RegExp(
-    '(?<![\\w])('+b+'s?|'+b+'d?|'+b+'ing|'+root+'es|'+root+'ed|'+root+'ing|'+
-    'will\\s+'+b+'|has\\s+'+b+'\\w*|have\\s+'+b+'\\w*|had\\s+'+b+'\\w*)(?![\\w])',
-    'gi'
-  );
-  return s.replace(pat,`<span class="vw" style="color:${col}">$1</span>`);
+  const pats=inflections(verb);
+  /* join into one alternation */
+  const combined='(?<![\\w])('+pats.join('|')+')(?![\\w-])';
+  try{
+    const rx=new RegExp(combined,'gi');
+    s=s.replace(rx,`<span class="vw" style="color:${col}">$1</span>`);
+  }catch(e){
+    /* fallback: try each pattern individually */
+    for(const p of pats){
+      try{
+        const rx=new RegExp('(?<![\\w])('+p+')(?![\\w-])','gi');
+        s=s.replace(rx,`<span class="vw" style="color:${col}">$1</span>`);
+      }catch(_){}
+    }
+  }
+  return s;
 }
 
 function render(){
@@ -708,6 +841,7 @@ function watchStart(){
   if(!watchMode)return;
   unflip();
   const v=V[cur];if(!v)return;
+  currentSide='front';
   speakText(v.tenses[tense].mrs,'fSpk','fSent');
   // continuation handled by watchAfterSpeech
 }
@@ -724,6 +858,7 @@ function watchAfterSpeech(){
       watchTimer=setTimeout(()=>{
         if(!watchMode)return;
         const v=V[cur];if(!v)return;
+        currentSide='back';
         speakText(v.tenses[tense].mr,'bSpk','bSent');
       },550);
     },1800);
